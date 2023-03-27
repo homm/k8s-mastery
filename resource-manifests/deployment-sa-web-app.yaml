@@ -21,11 +21,11 @@ spec:
         app: sa-web-app
     spec:
       containers:
-      - image: rinormaloku/sentiment-analysis-web-app
-        imagePullPolicy: Always
+      - image: sa-webapp
+        imagePullPolicy: Never
         name: sa-web-app
         env:
           - name: SA_LOGIC_API_URL
-            value: "http://sa-logic"
+            value: "http://sa-logic-lb"
         ports:
           - containerPort: 8080
